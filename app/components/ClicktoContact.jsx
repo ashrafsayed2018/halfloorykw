@@ -15,7 +15,7 @@ const ClicktoContact = () => {
   const handleOpen = () => setOpen(!open)
   return (
     <div
-      className={`py-8 ${open ? 'h-72' : 'min-h-40'}`}
+      className={`py-8 ${open ? 'h-80 md:h-72' : 'min-h-40'}`}
       style={{
         backgroundImage: "url('/images/background2.jpg')",
         backgroundSize: 'cover',
@@ -58,7 +58,7 @@ const ClicktoContact = () => {
             إضغط هنا للتواصل معنا ومعرفة المزيد....
           </span>
         </AccordionHeader>
-        <AccordionBody className={`${open ? 'block' : 'h-0 hidden'}`}>
+        <AccordionBody className={`${open ? 'block ' : 'h-0 hidden'}`}>
           <ul className="list-disc grid grid-cols-1 gap-2">
             <li className="flex items-center gap-4 beiruti text-lg md:text-xl">
               <span>التواصل عبر الهاتف</span>
