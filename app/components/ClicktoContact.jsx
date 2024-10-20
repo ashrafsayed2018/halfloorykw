@@ -58,7 +58,7 @@ const ClicktoContact = () => {
             إضغط هنا للتواصل معنا ومعرفة المزيد....
           </span>
         </AccordionHeader>
-        <AccordionBody className={`${open ? 'block' : 'hidden'}`}>
+        <AccordionBody className={`${open ? 'block' : 'h-0 hidden'}`}>
           <ul className="list-disc grid grid-cols-1 gap-2">
             <li className="flex items-center gap-4 beiruti text-lg md:text-xl">
               <span>التواصل عبر الهاتف</span>

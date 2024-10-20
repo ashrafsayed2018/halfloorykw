@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
         {/* Left Side */}
         <div className="flex items-center justify-start">
-          <p className="text-lg">ادارة أبو حسن</p>
+          <p className="text-lg md:text-xl">ادارة أبو حسن</p>
         </div>
 
         {/* Right Side - Social Media Links */}

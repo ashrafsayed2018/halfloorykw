@@ -77,3 +77,6 @@
 .animated-text {
   animation: colorChange 6s infinite ease-in-out; /* Change duration as needed */
 }
+.overflow-hidden {
+  height: auto !important;
+}
