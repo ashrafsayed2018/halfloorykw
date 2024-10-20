@@ -1,18 +1,18 @@
-'use client';
-import Image from 'next/image';
-import { navLinks, siteInfo } from '../data';
-import { useEffect, useState } from 'react';
+'use client'
+import Image from 'next/image'
+import { navLinks, siteInfo } from '../data'
+import { useEffect, useState } from 'react'
 
 const Nav = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   // Optional useEffect for future side effects
   useEffect(() => {
     // Side effect logic here if needed
     return () => {
       // Cleanup if needed
-    };
-  }, []);
+    }
+  }, [])
 
   return (
     <div className="fixed top-0 right-0 w-full left-0 z-50">
@@ -115,7 +115,7 @@ const Nav = () => {
         </div>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav
