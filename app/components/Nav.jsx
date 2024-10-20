@@ -18,12 +18,12 @@ const Nav = () => {
     <div className="fixed top-0 right-0 w-full left-0 z-50">
       {/* Top Navbar */}
       <div className="nav-top bg-[#99E5FF] h-16 flex items-center justify-center p-4 gap-4">
-        <p className="text-xl font-bold text-slate-700">
+        <p className="text-[16px] md:text-xl font-bold text-slate-700">
           دائما متواجدون في خدمتكم إدارة \ أبو حسن
         </p>
         <a
           href={`tel:${siteInfo.phone}`}
-          className="text-xl border-2 border-slate-700 py-1 px-4 rounded-xl hover:bg-slate-700 hover:text-white"
+          className="w-32 text-lg md:text-xl border-2 border-blue-700 py-1 px-4 rounded-xl hover:bg-blue-700 hover:text-white flex items-center justify-center gap-2"
         >
           اتصل الآن
         </a>
