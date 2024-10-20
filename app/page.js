@@ -7,6 +7,7 @@ import Contact from './components/Contact'
 import ImageSlider from './components/Slider'
 import Timing from './components/Timing'
 import Footer from './components/Footer'
+import { siteInfo } from './data'
 export default function Home() {
   return (
     <main>
@@ -24,7 +25,7 @@ export default function Home() {
         }}
       >
         <a
-          href="https://wa.me/966500000000"
+          href={`https://wa.me/${siteInfo.phone}`}
           className="text-white/80 text-xl font-bold py-1 px-3 rounded-xl bg-blue-700 hover:bg-white/80 hover:text-blue-700"
         >
           احجز الان{' '}
