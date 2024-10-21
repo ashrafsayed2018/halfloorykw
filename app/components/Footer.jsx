@@ -5,6 +5,7 @@ import {
   FaWhatsapp,
   FaYoutube,
 } from 'react-icons/fa'
+import { siteInfo } from '../data'
 
 const Footer = () => {
   return (
@@ -26,7 +27,7 @@ const Footer = () => {
             <FaYoutube className="w-10 h-10 fill-red-500" />
           </a>
           <a
-            href="https://wa.me/YOUR_PHONE_NUMBER"
+            href={`https://wa.me/${siteInfo.phone}`}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-400"

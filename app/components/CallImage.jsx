@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
+import { siteInfo } from '../data'
 
 const CallImage = () => {
   return (
-    <div className="relative">
+    <a href={`tel:${siteInfo.phone}`} className="relative">
                 <Image
                   src="/images/call.png"
                   alt="logo"
@@ -15,7 +16,7 @@ const CallImage = () => {
                 <span className="absolute bottom-5 left-1/2 -translate-x-2/4 text-2xl md:text-4xl font-bold text-yellow-900">
                   555-379-74
                 </span>
-              </div>
+              </a>
   )
 }
 
