@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import { siteInfo } from '../data'
+import CallImage from './CallImage'
+import WhatsappImage from './WhatsappImage'
 
 const Hero = () => {
   return (
@@ -20,32 +21,8 @@ const Hero = () => {
           <div className="calls w-full ">
             {/* call images */}
             <div className="call-images grid grid-cols-1 gap-4">
-              <div className="relative">
-                <Image
-                  src="/images/call.png"
-                  alt="logo"
-                  width={100}
-                  height={100}
-                  className="w-[95%] h-[112px]"
-                  unoptimized
-                />
-                <span className="absolute bottom-5 left-1/2 -translate-x-2/4 text-xl md:text-4xl font-bold text-yellow-900">
-                  555-379-74
-                </span>
-              </div>
-              <div className="relative">
-                <Image
-                  src="/images/whatsapp.png"
-                  alt="logo"
-                  width={100}
-                  height={100}
-                  className="w-[95%] h-[112px]"
-                  unoptimized
-                />
-                <span className="absolute bottom-10 left-1/2 -translate-x-2/4 text-xl md:text-4xl font-bold text-gray-900">
-                  555-379-74
-                </span>
-              </div>
+              <CallImage />
+              <WhatsappImage />
               <Image
                 src="/images/suggestions.png"
                 alt="logo"
@@ -62,9 +39,7 @@ const Hero = () => {
                 className="w-[95%] h-[112px]"
                 unoptimized
               />
-              <span className="absolute bottom-10 left-1/2 -translate-x-2/4 text-xl md:text-4xl font-bold text-gray-900">
-                555-379-74
-              </span>
+           
             </div>
             {/* content */}
             <div className="content mt-6">
@@ -197,7 +172,7 @@ const Hero = () => {
                 className="w-full h-full"
               />
               <span
-                className="absolute bottom-3 left-1/2 -translate-x-2/4 text-xl md:text-[45px] italic font-extrabold text-red-400"
+                className="absolute bottom-3 left-1/2 -translate-x-2/4 text-3xl md:text-5xl italic font-extrabold text-red-400"
                 style={{
                   textShadow: `
       1px 1px 0 white,
@@ -208,15 +183,12 @@ const Hero = () => {
                 }}
               >
                 55537974
-                <span className="absolute inset-0 text-white -z-10">
+                <span className="absolute inset-0 text-white -z-10 tracking-tight">
                   {'55537974'}
                 </span>
               </span>
 
-              {/* 
-              <span className="absolute bottom-3 left-1/2 -translate-x-2/4 text-xl md:text-[45px] italic font-extrabold text-red-400">
-                55537974
-              </span> */}
+      
             </div>
           </div>
         </div>

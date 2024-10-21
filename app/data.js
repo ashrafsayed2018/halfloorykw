@@ -13,32 +13,32 @@ export const navLinks = [
   },
   {
     title: 'ارسال شكوى',
-    href: '/ارسال-شكوى',
+    href: '/complaint',
     icon: '📝',
   },
   {
     title: 'فريق عمل محترف',
-    href: '/فريق-عمل-محترف',
+    href: '/team',
     icon: '💪',
   },
   {
     title: 'لماذا نحن',
-    href: '/لماذا-نحن',
+    href: '/whywe',
     icon: '⬇️',
   },
   {
     title: 'هاف لوري',
-    href: '/هاف-لوري',
+    href: '/halflorry',
     icon: '🚙',
   },
   {
     title: 'من نحن',
-    href: '/من-نحن',
+    href: '/whoweare',
     icon: '🤔',
   },
   {
     title: 'اتصل بنا',
-    href: '/اتصل-بنا',
+    href: '/contact',
     icon: '📞',
   },
 ]

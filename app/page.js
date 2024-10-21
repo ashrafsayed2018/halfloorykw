@@ -6,7 +6,6 @@ import Experience from './components/Experience'
 import Contact from './components/Contact'
 import ImageSlider from './components/Slider'
 import Timing from './components/Timing'
-import Footer from './components/Footer'
 import { siteInfo } from './data'
 export default function Home() {
   return (
@@ -37,7 +36,7 @@ export default function Home() {
         <Animation />
       </div>
       <Timing />
-      <Footer />
+    
     </main>
   )
 }
