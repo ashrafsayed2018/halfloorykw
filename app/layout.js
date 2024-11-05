@@ -16,7 +16,11 @@ const geistMono = localFont({
 
 export const metadata = {
   title: 'هاف لوري الكويت ',
-  description: 'هاف لورى نقل العفش بالكويت · هاف لورى نقل عفش: خدمة مثالية لنقل الأثاث بسهولة وفعالية · تجربة مميزة في تغليف ونقل بمدينة الشويخ-الجودة والاهتمام في كل تفصيلة.',
+  description:
+    'هاف لورى نقل العفش بالكويت · هاف لورى نقل عفش: خدمة مثالية لنقل الأثاث بسهولة وفعالية · تجربة مميزة في تغليف ونقل بمدينة الشويخ-الجودة والاهتمام في كل تفصيلة.',
+  other: {
+    'google-site-verification': 'wXAQF4wbqBxWquXWzRa6_z2s2_RvaIbLXz8xmGROYpc',
+  },
 }
 
 export default function RootLayout({ children }) {
