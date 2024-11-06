@@ -8,15 +8,14 @@ const Hero = () => {
   const formattedPhone = formatPhoneNumber(siteInfo.phone)
 
   return (
-    <div className="mt-32 w-full h-[1400px] bg-black opacity-70">
-      {/* video */}
-
+    <div className="-mt-4 w-full h-[1500px] md:h-[1400px] bg-black opacity-70 relative">
       <video
         src="/videos/hero.mp4"
+        Loading="lazy"
         autoPlay
         loop
         muted
-        className="w-full h-full"
+        className="w-full h-[1500px] md:h-[1400px] absolute top-0 bottom-0 right-0 left-0 object-cover"
       ></video>
 
       <div className="absolute inset-0 w-full h-[1400px] pt-40">

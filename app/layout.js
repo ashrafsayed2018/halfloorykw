@@ -1,8 +1,14 @@
 import localFont from 'next/font/local'
 import './globals.css'
-import Nav from './components/Nav'
-import Footer from './components/Footer'
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
+import Loading from './loading'
 
+// Dynamically import Nav and Footer to enable Suspense fallback
+const Nav = dynamic(() => import('./components/Nav'), { suspense: true })
+const Footer = dynamic(() => import('./components/Footer'), { suspense: true })
+
+// Import and configure local fonts
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
@@ -15,7 +21,7 @@ const geistMono = localFont({
 })
 
 export const metadata = {
-  title: 'هاف لوري الكويت ',
+  title: 'هاف لوري الكويت',
   description:
     'هاف لورى نقل العفش بالكويت · هاف لورى نقل عفش: خدمة مثالية لنقل الأثاث بسهولة وفعالية · تجربة مميزة في تغليف ونقل بمدينة الشويخ-الجودة والاهتمام في كل تفصيلة.',
   other: {
@@ -29,9 +35,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Nav />
-        {children}
-        <Footer />
+        <Suspense fallback={<Loading />}>
+          <Nav />
+          {children}
+          <Footer />
+        </Suspense>
       </body>
     </html>
   )
