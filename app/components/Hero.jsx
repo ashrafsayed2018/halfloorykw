@@ -14,6 +14,8 @@ const Hero = () => {
         alt="logo"
         width={100}
         height={100}
+        loading="lazy"
+        decoding="async"
         className="w-full h-full"
       />
 
