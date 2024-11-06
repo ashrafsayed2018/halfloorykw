@@ -2,8 +2,11 @@ import Image from 'next/image'
 import React from 'react'
 import CallImage from './CallImage'
 import WhatsappImage from './WhatsappImage'
+import { siteInfo, formatPhoneNumber } from '../data'
 
 const Hero = () => {
+  const formattedPhone = formatPhoneNumber(siteInfo.phone)
+
   return (
     <div className="mt-32 w-full h-[1400px] bg-black opacity-70">
       <Image
@@ -39,7 +42,6 @@ const Hero = () => {
                 className="w-[95%] h-[112px]"
                 unoptimized
               />
-           
             </div>
             {/* content */}
             <div className="content mt-6">
@@ -172,7 +174,7 @@ const Hero = () => {
                 className="w-full h-full"
               />
               <span
-                className="absolute bottom-3 left-1/2 -translate-x-2/4 text-3xl md:text-5xl italic font-extrabold text-red-400"
+                className="absolute bottom-3 left-1/2 -translate-x-2/4 text-3xl md:text-4xl italic font-extrabold text-red-400"
                 style={{
                   textShadow: `
       1px 1px 0 white,
@@ -182,13 +184,12 @@ const Hero = () => {
     `,
                 }}
               >
-                55537974
+                {formattedPhone}
+
                 <span className="absolute inset-0 text-white -z-10 tracking-tight">
-                  {'55537974'}
+                  {formattedPhone}
                 </span>
               </span>
-
-      
             </div>
           </div>
         </div>
