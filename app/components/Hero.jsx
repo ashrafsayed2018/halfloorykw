@@ -9,6 +9,8 @@ const Hero = () => {
 
   return (
     <div className="mt-32 w-full h-[1400px] bg-black opacity-70">
+      {/* video */}
+
       <video
         src="/videos/hero.mp4"
         autoPlay
