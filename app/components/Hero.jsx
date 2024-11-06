@@ -9,15 +9,13 @@ const Hero = () => {
 
   return (
     <div className="mt-32 w-full h-[1400px] bg-black opacity-70">
-      <Image
-        src="/images/hero.gif"
-        alt="logo"
-        width={100}
-        height={100}
-        loading="lazy"
-        decoding="async"
+      <video
+        src="/videos/hero.mp4"
+        autoPlay
+        loop
+        muted
         className="w-full h-full"
-      />
+      ></video>
 
       <div className="absolute inset-0 w-full h-[1400px] pt-40">
         <div className="overlay absolute inset-0 w-full h-full bg-black opacity-20  mt-[112px] z-0"></div>
