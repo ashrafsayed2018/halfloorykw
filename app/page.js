@@ -1,10 +1,11 @@
-import Hero from './components/Hero'
 import Animation from './components/Animation'
-import Supervision from './components/Supervision'
+import ArticlesList from './components/ArticlesList'
 import ClicktoContact from './components/ClicktoContact'
-import Experience from './components/Experience'
 import Contact from './components/Contact'
+import Experience from './components/Experience'
+import Hero from './components/Hero'
 import ImageSlider from './components/Slider'
+import Supervision from './components/Supervision'
 import Timing from './components/Timing'
 import { siteInfo } from './data'
 export default function Home() {
@@ -35,8 +36,8 @@ export default function Home() {
         <ImageSlider />
         <Animation />
       </div>
+      <ArticlesList />
       <Timing />
-    
     </main>
   )
 }
