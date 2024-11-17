@@ -1,8 +1,7 @@
 import Image from 'next/image'
-import React from 'react'
+import { formatPhoneNumber, siteInfo } from '../data'
 import CallImage from './CallImage'
 import WhatsappImage from './WhatsappImage'
-import { siteInfo, formatPhoneNumber } from '../data'
 
 const Hero = () => {
   const formattedPhone = formatPhoneNumber(siteInfo.phone)
@@ -11,7 +10,7 @@ const Hero = () => {
     <div className="-mt-4 w-full h-[1500px] md:h-[1400px] bg-black opacity-70 relative">
       <video
         src="/videos/hero.mp4"
-        Loading="lazy"
+        loading="lazy"
         autoPlay
         loop
         muted

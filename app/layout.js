@@ -1,7 +1,8 @@
-import localFont from 'next/font/local'
-import './globals.css'
 import dynamic from 'next/dynamic'
+import localFont from 'next/font/local'
 import { Suspense } from 'react'
+import FixedButtons from './components/FixedButtons'
+import './globals.css'
 import Loading from './loading'
 
 // Dynamically import Nav and Footer to enable Suspense fallback
@@ -27,6 +28,9 @@ export const metadata = {
   other: {
     'google-site-verification': 'wXAQF4wbqBxWquXWzRa6_z2s2_RvaIbLXz8xmGROYpc',
   },
+  icons: {
+    icon: '/icon.ico',
+  },
 }
 
 export default function RootLayout({ children }) {
@@ -38,6 +42,7 @@ export default function RootLayout({ children }) {
         <Suspense fallback={<Loading />}>
           <Nav />
           {children}
+          <FixedButtons />
           <Footer />
         </Suspense>
       </body>

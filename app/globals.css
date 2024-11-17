@@ -80,3 +80,23 @@
 .overflow-hidden {
   height: auto !important;
 }
+
+@keyframes vibrate {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+}
+
+.animate-vibrate {
+  animation: vibrate 0.2s infinite;
+}
