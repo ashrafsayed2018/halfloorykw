@@ -32,9 +32,10 @@ export default async function ArticlePage({ params }) {
           width={800}
           height={600}
         />
-        <p className="mt-8 px-2 md:px-8 text-lg md:text-2xl leading-8">
-          {article.content}
-        </p>
+        <div
+          className="mt-8 px-2 md:px-8 text-lg md:text-2xl leading-8"
+          dangerouslySetInnerHTML={{ __html: article.content }}
+        />
       </div>
     )
   } catch (error) {
