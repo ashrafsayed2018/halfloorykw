@@ -2,7 +2,7 @@ export const siteInfo = {
   name: 'halfloorykw',
   title: 'هاف لوري نقل العفش لجميع مناطق الكويت',
   description: 'خدمات الاستشارات العامة للمستشفيات',
-  phone: '99578286',
+  phone: '55537974',
 }
 export const formatPhoneNumber =function (phoneNumber) {
   // Add hyphens at the specific indices
