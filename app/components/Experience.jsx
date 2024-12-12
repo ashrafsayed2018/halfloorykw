@@ -1,4 +1,3 @@
-import React from 'react'
 import Card from './Card' // Assuming Card component is in the same folder
 
 const Experience = () => {
@@ -13,7 +12,7 @@ const Experience = () => {
       linkText: `فريق عمل محترف ومدرب
 
 `,
-      linkUrl: 'https://example1.com',
+      linkUrl: '/team',
       description: `توظيف وتدريب فريق عمل محترف لديه الخبرة في التعامل مع مختلف أنواع الأثاث وضمان تقديم خدمة عملاء متميزة.`,
     },
     {
@@ -21,7 +20,7 @@ const Experience = () => {
       imageSrc: '/images/experience2.png',
       title: `لماذا نحن؟`,
       linkText: `لماذا نحن؟`,
-      linkUrl: 'https://example2.com',
+      linkUrl: '/whywe',
       description: `الالتزام بمواعيد التسليم والاستلام بدقة يعزز ثقة العملاء في خدماتك ويزيد من سمعتك الجيدة.
 
 `,
@@ -35,7 +34,7 @@ const Experience = () => {
       linkText: `هاف لورى
 
 `,
-      linkUrl: 'https://example3.com',
+      linkUrl: '/halflorry',
       description: `هاف لورى نقل الاغراض بمختلف انواعها مع خدمة مميزة لنقل الاغراض بأمانبأمان بافضل سعر
 
 `,
