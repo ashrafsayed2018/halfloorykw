@@ -10,7 +10,7 @@ export default function ArticlesList() {
   }
 
   return (
-    <div className="h-auto w-full px-4 md:px-0 md:w-3/4 mx-auto">
+    <div className="min-h-screen h-auto w-full px-4 md:px-0 md:w-3/4 mx-auto">
       <h1 className="text-3xl font-bold text-center">احدث المقالات</h1>
       {articles.map((article) => {
         console.log(article)
