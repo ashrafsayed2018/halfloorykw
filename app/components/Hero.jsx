@@ -1,197 +1,94 @@
+import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import { formatPhoneNumber, siteInfo } from '../data'
 import CallImage from './CallImage'
 import WhatsappImage from './WhatsappImage'
 
+const inter = Inter({ subsets: ['latin'], display: 'swap' })
+
 const Hero = () => {
   const formattedPhone = formatPhoneNumber(siteInfo.phone)
 
   return (
-    <div className='-mt-4 w-full h-[1500px] md:h-[1400px] bg-black opacity-70 relative'>
+    <section
+      className={`relative w-full h-[1400px] bg-black opacity-70 ${inter.className}`}
+    >
+      {/* Optimized Video */}
       <video
         src='/videos/hero.mp4'
-        loading='lazy'
+        playsInline
         autoPlay
         loop
         muted
-        className='w-full h-[1500px] md:h-[1400px] absolute top-0 bottom-0 right-0 left-0 object-cover'
-      ></video>
+        loading='lazy'
+        poster='/images/hero-placeholder.jpg' // Add a lightweight poster image
+        className='absolute inset-0 w-full h-full object-cover'
+      />
 
-      <div className='absolute inset-0 w-full h-[1400px] pt-40'>
-        <div className='overlay absolute inset-0 w-full h-full bg-black opacity-20  mt-[112px] z-0'></div>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-3 w-[90%] md:w-[60%] mx-auto absolute inset-0 top-40 z-50'>
-          {/* calls and content */}
-          <div className='calls w-full '>
-            {/* call images */}
-            <div className='call-images grid grid-cols-1 gap-4'>
+      {/* Dark Overlay */}
+      <div className='absolute inset-0 bg-black opacity-40'></div>
+
+      {/* Content Grid */}
+      <div className='absolute inset-0 flex flex-col justify-center items-center z-10 w-[90%] md:w-[60%] mx-auto'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 w-full'>
+          {/* Left Section - Calls & Content */}
+          <div className='flex flex-col items-center space-y-4'>
+            {/* Call Images */}
+            <div className='grid grid-cols-1 gap-4'>
               <CallImage />
               <WhatsappImage />
               <Image
                 src='/images/suggestions.png'
-                alt='logo'
-                width={100}
-                height={100}
-                className='w-[95%] h-[112px]'
-                unoptimized
+                alt='Suggestions'
+                width={150}
+                height={150}
+                className='w-[95%] h-[112px] object-contain'
+                priority
               />
               <Image
                 src='/images/half-lorry.png'
-                alt='logo'
-                width={100}
-                height={100}
-                className='w-[95%] h-[112px]'
-                unoptimized
+                alt='Half Lorry'
+                width={150}
+                height={150}
+                className='w-[95%] h-[112px] object-contain'
+                priority
               />
             </div>
-            {/* content */}
-            <div className='content mt-6'>
-              <p
-                style={{
-                  backgroundColor: 'transparent',
-                  borderBottom: 'none',
-                  borderLeft: 'none',
-                  borderRight: 'none',
-                  borderTop: 'none',
-                  lineHeight: '1.8',
-                  marginBottom: '35pt',
-                  marginTop: '0pt',
-                  paddingBottom: '0pt',
-                  paddingLeft: '0pt',
-                  paddingRight: '0pt',
-                  paddingTop: '0pt',
-                  textAlign: 'center',
-                }}
-              >
-                <span
-                  style={{
-                    color: '#ffff00',
 
-                    fontSize: '26px',
-                    fontWeight: 800,
-                    verticalAlign: 'baseline',
-                  }}
-                >
-                  هاف لورى &nbsp;
-                </span>
-                <span
-                  style={{
-                    color: '#ffff00',
-
-                    fontSize: '26px',
-                    fontWeight: 800,
-                    verticalAlign: 'baseline',
-                  }}
-                >
-                  نقل عفش –
-                </span>
-                <span
-                  style={{
-                    color: '#ffff00',
-
-                    fontSize: '26px',
-                    fontWeight: 800,
-                    verticalAlign: 'baseline',
-                  }}
-                >
-                  هاف لورى
-                </span>
-                <span
-                  style={{
-                    color: '#ffff00',
-
-                    fontSize: '26px',
-                    fontWeight: 800,
-                    verticalAlign: 'baseline',
-                  }}
-                >
-                  نقل اغراض لجميع مناطق الكويت بافضل الاسعار مع توفير عمالة
-                  تحميل وتنزيل الاغراض&nbsp;
-                </span>
+            {/* Hero Content */}
+            <div className='text-center text-white space-y-4'>
+              <h1 className='text-yellow-400 text-3xl font-extrabold leading-tight'>
+                هاف لورى &nbsp; نقل عفش – هاف لورى نقل اغراض لجميع مناطق الكويت
+                بأفضل الأسعار مع توفير عمالة تحميل وتنزيل الأغراض
+              </h1>
+              <p className='font-bold'>
+                فريق عمل محترف لديه الخبرة في التعامل مع مختلف أنواع الأثاث
+                وضمان تقديم خدمة عملاء متميزة.
               </p>
-              <p
-                style={{
-                  textAlign: 'center',
-                  color: 'white',
-                }}
-                dir='rtl'
-              >
-                <span
-                  style={{
-                    fontWeight: 700,
-                    verticalAlign: 'baseline',
-                  }}
-                >
-                  فريق عمل محترف لديه الخبرة في التعامل مع مختلف أنواع الأثاث
-                  وضمان تقديم خدمة عملاء متميزة.
-                </span>
+              <p className='text-cyan-400 font-bold'>
+                دائما متواجدون في خدمتكم على مدار 24 ساعة
               </p>
-              <p
-                style={{
-                  textAlign: 'center',
-                }}
-                dir='rtl'
-              >
-                <span
-                  style={{
-                    color: '#00ffff',
-                    fontWeight: 700,
-                    verticalAlign: 'baseline',
-                  }}
-                >
-                  دائما متواجدون فى خدمتكم على مدار ال 24 ساعة&nbsp;
-                </span>
-              </p>
-              <p
-                style={{
-                  textAlign: 'center',
-                }}
-                dir='rtl'
-              >
-                <span
-                  style={{
-                    color: '#00ffff',
-                    fontWeight: 700,
-                    verticalAlign: 'baseline',
-                  }}
-                >
-                  لا تتردد في الاتصال&nbsp;
-                </span>
-              </p>
+              <p className='text-cyan-400 font-bold'>لا تتردد في الاتصال</p>
             </div>
           </div>
-          {/* image */}
 
-          <div className='w-full md:w-full h-[400px]'>
-            <div className='relative'>
-              <Image
-                src='/images/hero.png'
-                alt='logo'
-                width={100}
-                height={100}
-                className='w-full h-full'
-              />
-              <span
-                className='absolute bottom-3 left-1/2 -translate-x-2/4 text-3xl md:text-4xl italic font-extrabold text-red-400'
-                style={{
-                  textShadow: `
-      1px 1px 0 white,
-      -1px -1px 0 white,
-      -1px 1px 0 white,
-      1px -1px 0 white
-    `,
-                }}
-              >
-                {formattedPhone}
-
-                <span className='absolute inset-0 text-white -z-10 tracking-tight'>
-                  {formattedPhone}
-                </span>
-              </span>
-            </div>
+          {/* Right Section - Hero Image */}
+          <div className='w-full h-[400px] relative'>
+            <Image
+              src='/images/hero.webp'
+              alt='Hero'
+              width={600}
+              height={400}
+              className='w-full h-full object-contain'
+              priority
+            />
+            <span className='absolute bottom-3 left-1/2 -translate-x-1/2 text-3xl md:text-4xl font-extrabold text-red-400 drop-shadow-lg'>
+              {formattedPhone}
+            </span>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
