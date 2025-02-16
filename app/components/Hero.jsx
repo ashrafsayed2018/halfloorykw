@@ -21,7 +21,7 @@ const Hero = () => {
         loop
         muted
         loading='lazy'
-        poster='/images/hero-placeholder.jpg' // Add a lightweight poster image
+        poster='/images/hero-placeholder.jpg' // Lightweight poster image
         className='absolute inset-0 w-full h-full object-cover'
       />
 
@@ -57,9 +57,9 @@ const Hero = () => {
 
             {/* Hero Content */}
             <div className='text-center text-white space-y-4'>
-              <h1 className='text-yellow-400 text-3xl font-extrabold leading-tight'>
+              <h1 className='text-yellow-400 text-3xl font-extrabold leading-tight drop-shadow-lg min-h-[64px]'>
                 هاف لورى &nbsp; نقل عفش – هاف لورى نقل اغراض لجميع مناطق الكويت
-                بأفضل الأسعار مع توفير عمالة تحميل وتنزيل الأغراض
+                بأفضل الأسعار
               </h1>
               <p className='font-bold'>
                 فريق عمل محترف لديه الخبرة في التعامل مع مختلف أنواع الأثاث
