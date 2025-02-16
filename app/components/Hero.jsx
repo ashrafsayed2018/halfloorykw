@@ -7,44 +7,44 @@ const Hero = () => {
   const formattedPhone = formatPhoneNumber(siteInfo.phone)
 
   return (
-    <div className="-mt-4 w-full h-[1500px] md:h-[1400px] bg-black opacity-70 relative">
+    <div className='-mt-4 w-full h-[1500px] md:h-[1400px] bg-black opacity-70 relative'>
       <video
-        src="/videos/hero.mp4"
-        loading="lazy"
+        src='/videos/hero.mp4'
+        loading='lazy'
         autoPlay
         loop
         muted
-        className="w-full h-[1500px] md:h-[1400px] absolute top-0 bottom-0 right-0 left-0 object-cover"
+        className='w-full h-[1500px] md:h-[1400px] absolute top-0 bottom-0 right-0 left-0 object-cover'
       ></video>
 
-      <div className="absolute inset-0 w-full h-[1400px] pt-40">
-        <div className="overlay absolute inset-0 w-full h-full bg-black opacity-20  mt-[112px] z-0"></div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-[90%] md:w-[60%] mx-auto absolute inset-0 top-40 z-50">
+      <div className='absolute inset-0 w-full h-[1400px] pt-40'>
+        <div className='overlay absolute inset-0 w-full h-full bg-black opacity-20  mt-[112px] z-0'></div>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-3 w-[90%] md:w-[60%] mx-auto absolute inset-0 top-40 z-50'>
           {/* calls and content */}
-          <div className="calls w-full ">
+          <div className='calls w-full '>
             {/* call images */}
-            <div className="call-images grid grid-cols-1 gap-4">
+            <div className='call-images grid grid-cols-1 gap-4'>
               <CallImage />
               <WhatsappImage />
               <Image
-                src="/images/suggestions.png"
-                alt="logo"
+                src='/images/suggestions.png'
+                alt='logo'
                 width={100}
                 height={100}
-                className="w-[95%] h-[112px]"
+                className='w-[95%] h-[112px]'
                 unoptimized
               />
               <Image
-                src="/images/half-lorry.png"
-                alt="logo"
+                src='/images/half-lorry.png'
+                alt='logo'
                 width={100}
                 height={100}
-                className="w-[95%] h-[112px]"
+                className='w-[95%] h-[112px]'
                 unoptimized
               />
             </div>
             {/* content */}
-            <div className="content mt-6">
+            <div className='content mt-6'>
               <p
                 style={{
                   backgroundColor: 'transparent',
@@ -65,7 +65,7 @@ const Hero = () => {
                 <span
                   style={{
                     color: '#ffff00',
-                    fontFamily: 'Alexandria, Arial',
+
                     fontSize: '26px',
                     fontWeight: 800,
                     verticalAlign: 'baseline',
@@ -76,7 +76,7 @@ const Hero = () => {
                 <span
                   style={{
                     color: '#ffff00',
-                    fontFamily: 'Alexandria, Arial',
+
                     fontSize: '26px',
                     fontWeight: 800,
                     verticalAlign: 'baseline',
@@ -87,7 +87,7 @@ const Hero = () => {
                 <span
                   style={{
                     color: '#ffff00',
-                    fontFamily: 'Alexandria, Arial',
+
                     fontSize: '26px',
                     fontWeight: 800,
                     verticalAlign: 'baseline',
@@ -98,7 +98,7 @@ const Hero = () => {
                 <span
                   style={{
                     color: '#ffff00',
-                    fontFamily: 'Alexandria, Arial',
+
                     fontSize: '26px',
                     fontWeight: 800,
                     verticalAlign: 'baseline',
@@ -113,11 +113,10 @@ const Hero = () => {
                   textAlign: 'center',
                   color: 'white',
                 }}
-                dir="rtl"
+                dir='rtl'
               >
                 <span
                   style={{
-                    fontFamily: 'Marhey, Arial',
                     fontWeight: 700,
                     verticalAlign: 'baseline',
                   }}
@@ -130,12 +129,11 @@ const Hero = () => {
                 style={{
                   textAlign: 'center',
                 }}
-                dir="rtl"
+                dir='rtl'
               >
                 <span
                   style={{
                     color: '#00ffff',
-                    fontFamily: 'Marhey, Arial',
                     fontWeight: 700,
                     verticalAlign: 'baseline',
                   }}
@@ -147,12 +145,11 @@ const Hero = () => {
                 style={{
                   textAlign: 'center',
                 }}
-                dir="rtl"
+                dir='rtl'
               >
                 <span
                   style={{
                     color: '#00ffff',
-                    fontFamily: 'Marhey, Arial',
                     fontWeight: 700,
                     verticalAlign: 'baseline',
                   }}
@@ -164,17 +161,17 @@ const Hero = () => {
           </div>
           {/* image */}
 
-          <div className="w-full md:w-full h-[400px]">
-            <div className="relative">
+          <div className='w-full md:w-full h-[400px]'>
+            <div className='relative'>
               <Image
-                src="/images/hero.png"
-                alt="logo"
+                src='/images/hero.png'
+                alt='logo'
                 width={100}
                 height={100}
-                className="w-full h-full"
+                className='w-full h-full'
               />
               <span
-                className="absolute bottom-3 left-1/2 -translate-x-2/4 text-3xl md:text-4xl italic font-extrabold text-red-400"
+                className='absolute bottom-3 left-1/2 -translate-x-2/4 text-3xl md:text-4xl italic font-extrabold text-red-400'
                 style={{
                   textShadow: `
       1px 1px 0 white,
@@ -186,7 +183,7 @@ const Hero = () => {
               >
                 {formattedPhone}
 
-                <span className="absolute inset-0 text-white -z-10 tracking-tight">
+                <span className='absolute inset-0 text-white -z-10 tracking-tight'>
                   {formattedPhone}
                 </span>
               </span>
