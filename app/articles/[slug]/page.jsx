@@ -83,6 +83,19 @@ export default async function ArticlePage({ params }) {
       notFound() // Use Next.js notFound helper for 404
     }
 
+    const formatDate = (dateStr) => {
+      try {
+        const date = new Date(dateStr)
+        return new Intl.DateTimeFormat('ar', {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric',
+        }).format(date)
+      } catch (e) {
+        return dateStr
+      }
+    }
+
     return (
       <div className='mt-40'>
         <div className='md:flex items-start justify-around gap-6'>
@@ -90,7 +103,7 @@ export default async function ArticlePage({ params }) {
             {article.title}
           </h1>
           <div className='flex items-center gap-4 justify-center'>
-            <p className='text-sm text-gray-500'>{article.created_at}</p>
+            <p className='text-sm text-gray-500'>{formatDate(article.created_at)}</p>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'

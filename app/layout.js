@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import localFont from 'next/font/local'
 import { Suspense } from 'react'
+import { LanguageProvider } from './providers/LanguageProvider'
 import FixedButtons from './components/FixedButtons'
 import './globals.css'
 import Loading from './loading'
@@ -39,12 +40,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Suspense fallback={<Loading />}>
-          <Nav />
-          {children}
-          <FixedButtons />
-          <Footer />
-        </Suspense>
+        <LanguageProvider>
+          <Suspense fallback={<Loading />}>
+            <Nav />
+            {children}
+            <FixedButtons />
+            <Footer />
+          </Suspense>
+        </LanguageProvider>
       </body>
     </html>
   )

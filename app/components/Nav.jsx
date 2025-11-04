@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { navLinks, siteInfo } from '../data'
 import { useEffect, useState } from 'react'
+import { useLanguage } from '../providers/LanguageProvider'
 
 const Nav = () => {
   const [open, setOpen] = useState(false)
@@ -14,18 +15,42 @@ const Nav = () => {
     }
   }, [])
 
+  const { lang } = useLanguage()
+
+  const enTitles = {
+    '/': 'Home',
+    '/complaint': 'Complaint',
+    '/team': 'Team',
+    '/whywe': 'Why Us',
+    '/halflorry': 'Half Lorry',
+    '/whoweare': 'Who We Are',
+    '/contact': 'Contact',
+  }
+
+  const displayLinks = navLinks.map((l) => ({
+    ...l,
+    title: lang === 'en' ? enTitles[l.href] || l.title : l.title,
+  }))
+
+  const topText =
+    lang === 'en'
+      ? 'Always here to serve you · Abu Hassan'
+      : 'دائما متواجدون في خدمتكم إدارة \\ أبو حسن'
+
+  const callLabel = lang === 'en' ? 'Call Now' : 'اتصل الآن'
+  const siteTitle =
+    lang === 'en' ? 'Half Lorry Kuwait' : siteInfo.title
+
   return (
     <div className="fixed top-0 right-0 w-full left-0 z-50">
       {/* Top Navbar */}
       <div className="nav-top bg-[#99E5FF] h-16 flex items-center justify-center p-4 gap-4">
-        <p className="text-[16px] md:text-xl font-bold text-slate-700">
-          دائما متواجدون في خدمتكم إدارة \ أبو حسن
-        </p>
+        <p className="text-[16px] md:text-xl font-bold text-slate-700">{topText}</p>
         <a
           href={`tel:${siteInfo.phone}`}
           className="w-32 text-lg md:text-xl border-2 border-blue-700 py-1 px-4 rounded-xl hover:bg-blue-700 hover:text-white flex items-center justify-center gap-2"
         >
-          اتصل الآن
+          {callLabel}
         </a>
       </div>
 
@@ -40,12 +65,12 @@ const Nav = () => {
             height={100}
             className="w-24 h-14 object-contain"
           />
-          <p className="text-xl text-white">{siteInfo.title}</p>
+          <p className="text-xl text-white">{siteTitle}</p>
         </div>
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex gap-4">
-          {navLinks.map((link, index) => (
+          {displayLinks.map((link, index) => (
             <li key={index}>
               <a
                 href={link.href}
