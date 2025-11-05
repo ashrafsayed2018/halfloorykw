@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { articles } from './articles'
 import { siteInfo } from './data'
 import { useLanguage } from './providers/LanguageProvider'
+import HalfLorryAnimation from './components/HalfLorryAnimation'
 
 const content = {
   ar: {
@@ -76,6 +77,10 @@ const content = {
     coverageCall: 'اتصل بنا',
     articlesTitle: 'أحدث المقالات',
     readMore: 'اقرأ المزيد',
+    lorryTitle: 'هاف لوري لنقل العفش',
+    lorryDesc:
+      'شاهد شاحنة هاف لوري المتحركة التي تمثل خدمتنا في نقل العفش بسرعة وأمان عبر الكويت.',
+    lorryWhatsapp: 'احجز عبر واتساب',
   },
   en: {
     langLabel: 'العربية',
@@ -147,6 +152,10 @@ const content = {
     coverageCall: 'Call Us',
     articlesTitle: 'Latest Articles',
     readMore: 'Read More',
+    lorryTitle: 'Half Lorry Furniture Moving',
+    lorryDesc:
+      'Our animated half lorry represents fast, safe furniture moving across Kuwait.',
+    lorryWhatsapp: 'Book on WhatsApp',
   },
 }
 
@@ -219,30 +228,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features */}
+      {/* Half Lorry Animation Section */}
       <section className='mx-auto max-w-6xl px-4 py-12'>
-        <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 items-center'>
+          <HalfLorryAnimation />
+          <div className='rounded-2xl border border-transparent bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white p-6 ring-1 ring-blue-800'>
+            <h2 className='text-2xl md:text-3xl font-bold'>{t.lorryTitle}</h2>
+            <p className='mt-3 text-blue-100/90'>{t.lorryDesc}</p>
+            <div className='mt-6 flex flex-wrap gap-3'>
+              <a
+                href={`https://wa.me/${siteInfo.phone}`}
+                className='inline-flex items-center justify-center rounded-xl bg-green-500 px-5 py-3 text-white shadow hover:bg-green-600'
+              >
+                {t.lorryWhatsapp}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className='bg-gradient-to-br from-sky-200 via-indigo-200 to-blue-200 py-12'>
+        <div className='mx-auto max-w-6xl px-4'>
+          <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
           {t.features.map((f) => (
             <div
               key={f.title}
-              className='rounded-2xl border border-gray-200 bg-white p-6 shadow-sm'
+              className='rounded-2xl bg-white text-slate-900 p-6 shadow ring-1 ring-slate-200 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:ring-blue-300'
             >
-              <div className='text-2xl'>{f.icon}</div>
-              <h3 className='mt-3 text-lg font-semibold'>{f.title}</h3>
-              <p className='mt-2 text-gray-600'>{f.desc}</p>
+              <div className='inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500 text-white shadow-md'>
+                <span className='text-2xl'>{f.icon}</span>
+              </div>
+              <h3 className='mt-3 text-lg font-semibold text-slate-900'>{f.title}</h3>
+              <p className='mt-2 text-slate-600'>{f.desc}</p>
             </div>
           ))}
+          </div>
         </div>
       </section>
 
       {/* About Us */}
-      <section className='mx-auto max-w-6xl px-4 py-12'>
-        <div className='rounded-2xl bg-white p-8 shadow-sm border border-gray-200'>
-          <h2 className='text-2xl md:text-3xl font-bold text-blue-900'>
+      <section className='bg-gradient-to-br from-indigo-200 via-blue-200 to-sky-200 py-12'>
+        <div className='mx-auto max-w-6xl px-4'>
+          <div className='rounded-2xl bg-white text-slate-900 p-8 shadow ring-1 ring-slate-200'>
+          <h2 className='text-2xl md:text-3xl font-bold text-slate-900'>
             {t.aboutTitle}
           </h2>
-          <p className='mt-4 text-gray-700 leading-8'>{t.aboutP1}</p>
-          <p className='mt-2 text-gray-700 leading-8'>{t.aboutP2}</p>
+          <p className='mt-4 text-slate-700 leading-8'>{t.aboutP1}</p>
+          <p className='mt-2 text-slate-700 leading-8'>{t.aboutP2}</p>
           <div className='mt-6 flex flex-wrap gap-3'>
             <a
               href={`https://wa.me/${siteInfo.phone}`}
@@ -257,39 +290,45 @@ export default function Home() {
               {t.aboutCall}
             </a>
           </div>
+          </div>
         </div>
       </section>
 
       {/* Our Services */}
-      <section className='mx-auto max-w-6xl px-4 py-12'>
-        <h2 className='text-2xl md:text-3xl font-bold text-blue-900'>
-          {t.servicesTitle}
-        </h2>
-        <div className='mt-6 grid grid-cols-1 gap-6 md:grid-cols-3'>
+      <section className='bg-gradient-to-br from-amber-200 via-orange-200 to-rose-200 py-12'>
+        <div className='mx-auto max-w-6xl px-4'>
+          <h2 className='text-2xl md:text-3xl font-bold text-slate-900'>
+            {t.servicesTitle}
+          </h2>
+          <div className='mt-6 grid grid-cols-1 gap-6 md:grid-cols-3'>
           {t.services.map((s) => (
             <div
               key={s.title}
-              className='rounded-2xl border border-gray-200 bg-white p-6 shadow-sm'
+              className='rounded-2xl bg-white text-slate-900 p-6 shadow ring-1 ring-slate-200 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:ring-orange-300'
             >
-              <div className='text-2xl'>{s.icon}</div>
-              <h3 className='mt-3 text-lg font-semibold'>{s.title}</h3>
-              <p className='mt-2 text-gray-600'>{s.desc}</p>
+              <div className='inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500 text-white shadow-md'>
+                <span className='text-2xl'>{s.icon}</span>
+              </div>
+              <h3 className='mt-3 text-lg font-semibold text-slate-900'>{s.title}</h3>
+              <p className='mt-2 text-slate-600'>{s.desc}</p>
             </div>
           ))}
+          </div>
         </div>
       </section>
 
       {/* Latest Articles */}
-      <section className='mx-auto max-w-6xl px-4 py-12'>
-        <h2 className='text-2xl md:text-3xl font-bold text-blue-900'>
-          {t.articlesTitle}
-        </h2>
-        <div className='mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+      <section className='bg-gradient-to-br from-slate-200 via-blue-200 to-indigo-200 py-12'>
+        <div className='mx-auto max-w-6xl px-4'>
+          <h2 className='text-2xl md:text-3xl font-bold text-slate-900'>
+            {t.articlesTitle}
+          </h2>
+          <div className='mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
           {latestArticles.map((a) => (
             <a
               key={a.id}
               href={`/articles/${encodeURIComponent(a.slug)}`}
-              className='group block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow'
+              className='group block overflow-hidden rounded-2xl bg-white text-slate-900 shadow hover:shadow-2xl transition-transform duration-300 hover:-translate-y-0.5 ring-1 ring-slate-200 hover:ring-slate-300'
             >
               <div className='relative h-48 w-full'>
                 <Image
@@ -299,19 +338,19 @@ export default function Home() {
                   className='object-cover'
                   sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 />
-                <div className='absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity'></div>
+                <div className='absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity'></div>
                 <div className='absolute bottom-2 left-2 right-2 flex items-center justify-between text-white'>
-                  <span className='text-xs md:text-sm bg-black/40 px-2 py-1 rounded-md'>
+                  <span className='text-xs md:text-sm bg-blue-500 px-2 py-1 rounded-md shadow'>
                     {formatDate(a.created_at)}
                   </span>
                 </div>
               </div>
               <div className='p-4'>
-                <h3 className='text-lg font-semibold text-gray-900 line-clamp-2'>
+                <h3 className='text-lg font-semibold text-slate-900 line-clamp-2'>
                   {a.title}
                 </h3>
                 {a.excerpt && (
-                  <p className='mt-2 text-sm text-gray-600 line-clamp-3'>
+                  <p className='mt-2 text-sm text-slate-600 line-clamp-3'>
                     {a.excerpt}
                   </p>
                 )}
@@ -332,6 +371,7 @@ export default function Home() {
               </div>
             </a>
           ))}
+          </div>
         </div>
       </section>
 
