@@ -1,9 +1,9 @@
 'use client'
 import Image from 'next/image'
 import { articles } from './articles'
+import HalfLorryAnimation from './components/HalfLorryAnimation'
 import { siteInfo } from './data'
 import { useLanguage } from './providers/LanguageProvider'
-import HalfLorryAnimation from './components/HalfLorryAnimation'
 
 const content = {
   ar: {
@@ -164,7 +164,7 @@ export default function Home() {
   const t = content[lang]
   const latestArticles = [...articles]
     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-    .slice(0, 10)
+    .slice(0, 20)
 
   const formatDate = (dateStr) => {
     try {
@@ -251,18 +251,20 @@ export default function Home() {
       <section className='bg-gradient-to-br from-sky-200 via-indigo-200 to-blue-200 py-12'>
         <div className='mx-auto max-w-6xl px-4'>
           <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
-          {t.features.map((f) => (
-            <div
-              key={f.title}
-              className='rounded-2xl bg-white text-slate-900 p-6 shadow ring-1 ring-slate-200 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:ring-blue-300'
-            >
-              <div className='inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500 text-white shadow-md'>
-                <span className='text-2xl'>{f.icon}</span>
+            {t.features.map((f) => (
+              <div
+                key={f.title}
+                className='rounded-2xl bg-white text-slate-900 p-6 shadow ring-1 ring-slate-200 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:ring-blue-300'
+              >
+                <div className='inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500 text-white shadow-md'>
+                  <span className='text-2xl'>{f.icon}</span>
+                </div>
+                <h3 className='mt-3 text-lg font-semibold text-slate-900'>
+                  {f.title}
+                </h3>
+                <p className='mt-2 text-slate-600'>{f.desc}</p>
               </div>
-              <h3 className='mt-3 text-lg font-semibold text-slate-900'>{f.title}</h3>
-              <p className='mt-2 text-slate-600'>{f.desc}</p>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
       </section>
@@ -271,25 +273,25 @@ export default function Home() {
       <section className='bg-gradient-to-br from-indigo-200 via-blue-200 to-sky-200 py-12'>
         <div className='mx-auto max-w-6xl px-4'>
           <div className='rounded-2xl bg-white text-slate-900 p-8 shadow ring-1 ring-slate-200'>
-          <h2 className='text-2xl md:text-3xl font-bold text-slate-900'>
-            {t.aboutTitle}
-          </h2>
-          <p className='mt-4 text-slate-700 leading-8'>{t.aboutP1}</p>
-          <p className='mt-2 text-slate-700 leading-8'>{t.aboutP2}</p>
-          <div className='mt-6 flex flex-wrap gap-3'>
-            <a
-              href={`https://wa.me/${siteInfo.phone}`}
-              className='inline-flex items-center justify-center rounded-xl bg-green-500 px-5 py-3 text-white shadow hover:bg-green-600'
-            >
-              {t.aboutWhatsapp}
-            </a>
-            <a
-              href={`tel:${siteInfo.phone}`}
-              className='inline-flex items-center justify-center rounded-xl bg-blue-700 px-5 py-3 text-white shadow hover:bg-blue-800'
-            >
-              {t.aboutCall}
-            </a>
-          </div>
+            <h2 className='text-2xl md:text-3xl font-bold text-slate-900'>
+              {t.aboutTitle}
+            </h2>
+            <p className='mt-4 text-slate-700 leading-8'>{t.aboutP1}</p>
+            <p className='mt-2 text-slate-700 leading-8'>{t.aboutP2}</p>
+            <div className='mt-6 flex flex-wrap gap-3'>
+              <a
+                href={`https://wa.me/${siteInfo.phone}`}
+                className='inline-flex items-center justify-center rounded-xl bg-green-500 px-5 py-3 text-white shadow hover:bg-green-600'
+              >
+                {t.aboutWhatsapp}
+              </a>
+              <a
+                href={`tel:${siteInfo.phone}`}
+                className='inline-flex items-center justify-center rounded-xl bg-blue-700 px-5 py-3 text-white shadow hover:bg-blue-800'
+              >
+                {t.aboutCall}
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -301,18 +303,20 @@ export default function Home() {
             {t.servicesTitle}
           </h2>
           <div className='mt-6 grid grid-cols-1 gap-6 md:grid-cols-3'>
-          {t.services.map((s) => (
-            <div
-              key={s.title}
-              className='rounded-2xl bg-white text-slate-900 p-6 shadow ring-1 ring-slate-200 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:ring-orange-300'
-            >
-              <div className='inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500 text-white shadow-md'>
-                <span className='text-2xl'>{s.icon}</span>
+            {t.services.map((s) => (
+              <div
+                key={s.title}
+                className='rounded-2xl bg-white text-slate-900 p-6 shadow ring-1 ring-slate-200 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:ring-orange-300'
+              >
+                <div className='inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500 text-white shadow-md'>
+                  <span className='text-2xl'>{s.icon}</span>
+                </div>
+                <h3 className='mt-3 text-lg font-semibold text-slate-900'>
+                  {s.title}
+                </h3>
+                <p className='mt-2 text-slate-600'>{s.desc}</p>
               </div>
-              <h3 className='mt-3 text-lg font-semibold text-slate-900'>{s.title}</h3>
-              <p className='mt-2 text-slate-600'>{s.desc}</p>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
       </section>
@@ -324,53 +328,53 @@ export default function Home() {
             {t.articlesTitle}
           </h2>
           <div className='mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-          {latestArticles.map((a) => (
-            <a
-              key={a.id}
-              href={`/articles/${encodeURIComponent(a.slug)}`}
-              className='group block overflow-hidden rounded-2xl bg-white text-slate-900 shadow hover:shadow-2xl transition-transform duration-300 hover:-translate-y-0.5 ring-1 ring-slate-200 hover:ring-slate-300'
-            >
-              <div className='relative h-48 w-full'>
-                <Image
-                  src={a.image}
-                  alt={a.title}
-                  fill
-                  className='object-cover'
-                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                />
-                <div className='absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity'></div>
-                <div className='absolute bottom-2 left-2 right-2 flex items-center justify-between text-white'>
-                  <span className='text-xs md:text-sm bg-blue-500 px-2 py-1 rounded-md shadow'>
-                    {formatDate(a.created_at)}
-                  </span>
+            {latestArticles.map((a) => (
+              <a
+                key={a.id}
+                href={`/articles/${encodeURIComponent(a.slug)}`}
+                className='group block overflow-hidden rounded-2xl bg-white text-slate-900 shadow hover:shadow-2xl transition-transform duration-300 hover:-translate-y-0.5 ring-1 ring-slate-200 hover:ring-slate-300'
+              >
+                <div className='relative h-48 w-full'>
+                  <Image
+                    src={a.image}
+                    alt={a.title}
+                    fill
+                    className='object-cover'
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                  />
+                  <div className='absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity'></div>
+                  <div className='absolute bottom-2 left-2 right-2 flex items-center justify-between text-white'>
+                    <span className='text-xs md:text-sm bg-blue-500 px-2 py-1 rounded-md shadow'>
+                      {formatDate(a.created_at)}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className='p-4'>
-                <h3 className='text-lg font-semibold text-slate-900 line-clamp-2'>
-                  {a.title}
-                </h3>
-                {a.excerpt && (
-                  <p className='mt-2 text-sm text-slate-600 line-clamp-3'>
-                    {a.excerpt}
-                  </p>
-                )}
-                <div className='mt-4 flex items-center justify-between'>
-                  <span className='text-sm text-blue-700 group-hover:text-blue-900'>
-                    {t.readMore}
-                  </span>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 20 20'
-                    fill='currentColor'
-                    className='size-4 text-blue-700 group-hover:text-blue-900'
-                  >
-                    <path d='M10.75 4.75a.75.75 0 0 0-1.5 0v4.5a.75.75 0 0 0 .75.75h4.5a.75.75 0 0 0 0-1.5h-3.75v-3.75Z' />
-                    <path d='M5.5 5.5A4.5 4.5 0 0 1 10 1h2a7 7 0 1 1-7 7V6a.5.5 0 0 1 1 0v1a6 6 0 1 0 6-6h-2a3.5 3.5 0 0 0-3.5 3.5v2a.5.5 0 0 1-1 0v-2Z' />
-                  </svg>
+                <div className='p-4'>
+                  <h3 className='text-lg font-semibold text-slate-900 line-clamp-2'>
+                    {a.title}
+                  </h3>
+                  {a.excerpt && (
+                    <p className='mt-2 text-sm text-slate-600 line-clamp-3'>
+                      {a.excerpt}
+                    </p>
+                  )}
+                  <div className='mt-4 flex items-center justify-between'>
+                    <span className='text-sm text-blue-700 group-hover:text-blue-900'>
+                      {t.readMore}
+                    </span>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      viewBox='0 0 20 20'
+                      fill='currentColor'
+                      className='size-4 text-blue-700 group-hover:text-blue-900'
+                    >
+                      <path d='M10.75 4.75a.75.75 0 0 0-1.5 0v4.5a.75.75 0 0 0 .75.75h4.5a.75.75 0 0 0 0-1.5h-3.75v-3.75Z' />
+                      <path d='M5.5 5.5A4.5 4.5 0 0 1 10 1h2a7 7 0 1 1-7 7V6a.5.5 0 0 1 1 0v1a6 6 0 1 0 6-6h-2a3.5 3.5 0 0 0-3.5 3.5v2a.5.5 0 0 1-1 0v-2Z' />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            ))}
           </div>
         </div>
       </section>
