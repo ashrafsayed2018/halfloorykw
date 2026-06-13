@@ -2,9 +2,9 @@ export const siteInfo = {
   name: 'halfloorykw',
   title: 'هاف لوري نقل العفش لجميع مناطق الكويت',
   description: 'خدمات الاستشارات العامة للمستشفيات',
-  phone: '55537974',
+  phone: '65594848',
 }
-export const formatPhoneNumber =function (phoneNumber) {
+export const formatPhoneNumber = function (phoneNumber) {
   // Add hyphens at the specific indices
   return phoneNumber.replace(/(\d{3})(\d{3})(\d{2})/, '$1-$2-$3')
 }
